@@ -8,11 +8,6 @@
 
 #define DEBUG_LED_PIN 	GPIO_PIN_1	// lerwinDE: blue led panel
 #define DEBUG_LED_PORT 	GPIOF				// lerwinDE: blue led panel
-#ifdef DEBUG_LED_PIN
-  #define DEBUG_LedSet(bSet){gpio_bit_write(DEBUG_LED_PORT, DEBUG_LED_PIN, bSet);}
-#else
-  #define DEBUG_LedSet(bSet)
-#endif
 
 
 // LED defines

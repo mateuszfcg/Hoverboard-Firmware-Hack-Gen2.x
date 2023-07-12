@@ -22,14 +22,21 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 C:\GitHub\Hoverboard-Firmware-Hack-Gen2.x\HoverBoardGigaDevice\Hoverboard.uvprojx
-Project File Date:  05/11/2023
+Project File Date:  07/12/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
+compiling main.c...
+compiling bldc.c...
+compiling setup.c...
+compiling it.c...
+compiling commsSteering.c...
+compiling commsBluetooth.c...
 compiling commsMasterSlave.c...
+compiling led.c...
 linking...
-Program Size: Code=19204 RO-data=540 RW-data=24 ZI-data=2408  
+Program Size: Code=21148 RO-data=540 RW-data=24 ZI-data=2408  
 FromELF: creating hex file...
 After Build - User command #1: fromelf.exe --bin Objects\hoverboard.axf --output BinariesToFlash\hoverboard.bin
 After Build - User command #2: moveOutput.bat
@@ -87,8 +94,8 @@ Package Vendor: GigaDevice
       Source file:   Device/Firmware/Peripherals/src/gd32f1x0_dma.c
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:FWDGT:3.2.0
-      Source file:   Device/Firmware/Peripherals/src/gd32f1x0_fwdgt.c
       Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_fwdgt.h
+      Source file:   Device/Firmware/Peripherals/src/gd32f1x0_fwdgt.c
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:GPIO:3.2.0
       Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_gpio.h
@@ -103,20 +110,20 @@ Package Vendor: GigaDevice
       Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_dbg.h
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:MISC:3.2.0
-      Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_misc.h
       Source file:   Device/Firmware/Peripherals/src/gd32f1x0_misc.c
+      Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_misc.h
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:OPA:3.2.0
       Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_opa.h
       Source file:   Device/Firmware/Peripherals/src/gd32f1x0_opa.c
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:PMU:3.2.0
-      Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_pmu.h
       Source file:   Device/Firmware/Peripherals/src/gd32f1x0_pmu.c
+      Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_pmu.h
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:RCU:3.2.0
-      Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_rcu.h
       Source file:   Device/Firmware/Peripherals/src/gd32f1x0_rcu.c
+      Include file:  Device/Firmware/Peripherals/inc/gd32f1x0_rcu.h
 
    * Component: GigaDevice::Device:GD32F1x0_StdPeripherals:SYSCFG:3.2.0
       Source file:   Device/Firmware/Peripherals/src/gd32f1x0_syscfg.c
@@ -141,7 +148,7 @@ Package Vendor: GigaDevice
       Include file:  Device/Include/gd32f1x0.h
       Source file:   Device/Source/startup_gd32f1x0.s
       Source file:   Device/Source/system_gd32f1x0.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
