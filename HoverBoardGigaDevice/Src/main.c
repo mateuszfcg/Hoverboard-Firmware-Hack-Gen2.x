@@ -320,6 +320,10 @@ int main (void)
 
 		#ifdef TEST_SPEED
 			speed = 3 * (ABS((	((int32_t)steerCounter+100) % 400) - 200) - 100);
+			//speed = 15 * (ABS((	((int32_t)steerCounter+100) % 400) - 200) - 100);
+		  //#define SPEED 390  //760  //390
+			//speed = CLAMP(speed , -SPEED, SPEED);
+		
 			//speed = 300;
 			//speed = 0;
 
