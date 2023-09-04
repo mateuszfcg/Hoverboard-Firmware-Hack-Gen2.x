@@ -26,7 +26,7 @@ void setup()
   #endif
   
   //HoverSetupArduino(oSerialHover,19200);    //  8 Mhz Arduino Mini too slow for 115200 !!!
-  HoverSetupEsp32(oSerialHover,19200,16,17);      // baud, rx, tx
+  HoverSetupEsp32(oSerialHover,19200,39,37);      // baud, rx, tx
 
   pinMode(LED_BUILTIN, OUTPUT);
 }
@@ -40,7 +40,7 @@ void loop()
   int iSpeed = 3 * (ABS( (int)((iNow/20+100) % 400) - 200) - 100);   // repeats from +300 to -300 to +300 :-)
   int iSteer = 0;
   //iSpeed /= 10;
-  
+
   
   if (Receive(oSerialHover,oHoverFeedback))   // Reply only when you receive data
   {

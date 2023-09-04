@@ -1,4 +1,3 @@
-
 #define ARM_MATH_CM3
 
 #include "gd32f1x0.h"
@@ -22,7 +21,7 @@
 	extern uint8_t buzzerPattern; 						// global variable for the buzzer pattern. can be 1, 2, 3, 4, 5, 6, 7...
   #define BuzzerSet(iFrequency, iPattern) {buzzerFreq = iFrequency;buzzerPattern = iPattern;}
   #define BUZZER_MelodyDown(){int8_t iFreq=8;for (iFreq; iFreq>= 0; iFreq--){ buzzerFreq = iFreq; Delay(10); } buzzerFreq = 0;}
-  #define BUZZER_MelodyUp(){for (int8_t iFreq=0; iFreq<= 8; iFreq++){ buzzerFreq = iFreq; Delay(10); } buzzerFreq = 0;}
+  #define BUZZER_MelodyUp(){int8_t iFreq=0; for (iFreq; iFreq<= 8; iFreq++){ buzzerFreq = iFreq; Delay(10); } buzzerFreq = 0;}
 #else
   #define BuzzerSet(iFrequency, iPattern)
   #define BUZZER_MelodyDown()
@@ -307,7 +306,7 @@ int main (void)
 	// Startup-Sound
 	BUZZER_MelodyDown()
 
-#ifdef MASTER
+#ifdef CHECK_BUTTON
 	// Wait until button is released
 	while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN)){fwdgt_counter_reload();} // Reload watchdog while button is pressed
 #endif
@@ -403,6 +402,7 @@ int main (void)
 		sendSlaveIdentifier++;
 		if (sendSlaveIdentifier > 2)	sendSlaveIdentifier = 0;
 		
+		
 		// Show green battery symbol when battery level BAT_LOW_LVL1 is reached
     if (batteryVoltage > BAT_LOW_LVL1)
 		{
@@ -439,12 +439,14 @@ int main (void)
 			ShutOff();
     }
 
-		// Shut device off when button is pressed
-		if (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN))
-		{
-      while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN)) {}
-			ShutOff();
-    }
+		#ifdef CHECK_BUTTON
+			// Shut device off when button is pressed
+			if (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN))
+			{
+				while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN)) {fwdgt_counter_reload();}
+				ShutOff();
+			}
+		#endif
 		
 		// Calculate inactivity timeout (Except, when charger is active -> keep device running)
     if (ABS(pwmMaster) > 50 || ABS(pwmSlave) > 50 || !chargeStateLowActive)
