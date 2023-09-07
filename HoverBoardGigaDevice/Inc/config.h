@@ -3,7 +3,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "gd32f1x0.h"
+//#include "gd32f1x0.h"
 
 // ################################################################################
 // select one of the supported circuit boards and whether to compile the slave- or master board
@@ -18,7 +18,7 @@
 
 #define MASTER		// uncomment if firmware is for slave board
 
-//#define TEST_SPEED	// will discard uart input and repeat speed from -300 to 300 instead
+#define TEST_SPEED	// will discard uart input and repeat speed from -300 to 300 instead
 
 #ifdef MASTER
 	#define SPEED_COEFFICIENT   -1

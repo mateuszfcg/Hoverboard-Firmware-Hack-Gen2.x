@@ -509,6 +509,11 @@
               <FileType>5</FileType>
               <FilePath>.\Inc\defines_2-x.h</FilePath>
             </File>
+            <File>
+              <FileName>target.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\target.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -851,7 +856,7 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>GD32E230</Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>
             </VariousControls>
@@ -1021,6 +1026,11 @@
               <FileName>defines_2-x.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\defines_2-x.h</FilePath>
+            </File>
+            <File>
+              <FileName>target.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\target.h</FilePath>
             </File>
           </Files>
         </Group>

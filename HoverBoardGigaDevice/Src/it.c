@@ -28,7 +28,7 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "gd32f1x0.h"
+#include "../Inc/target.h"
 #include "../Inc/it.h"
 #include "../Inc/config.h"
 #include "../Inc/defines.h"

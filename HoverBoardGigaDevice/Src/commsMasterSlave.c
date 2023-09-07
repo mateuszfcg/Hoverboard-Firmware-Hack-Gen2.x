@@ -1,5 +1,5 @@
 // improved and unified serial communication by Robo Durden :-)
-#include "gd32f1x0.h"
+#include "../Inc/target.h"
 #include "../Inc/it.h"
 #include "../Inc/comms.h"
 #include "../Inc/commsMasterSlave.h"
