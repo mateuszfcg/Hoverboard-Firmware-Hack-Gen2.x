@@ -383,7 +383,7 @@ void ADC_init(void)
 	
 	// Disable the temperature sensor, Vrefint and vbat channel
 	adc_tempsensor_vrefint_disable();
-	adc_vbat_disable();
+	TARGET_adc_vbat_disable();
 	
 	// ADC analog watchdog disable
 	adc_watchdog_disable();

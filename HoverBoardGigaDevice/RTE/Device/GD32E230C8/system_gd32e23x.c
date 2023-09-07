@@ -199,7 +199,7 @@ static void system_clock_72m_hxtal(void)
         }
     }
     
-    FMC_WS = (FMC_WS & (~FMC_WS_WSCNT)) | WS_WSCNT_2;
+    //robo FMC_WS = (FMC_WS & (~FMC_WS_WSCNT)) | WS_WSCNT_2;
     
     /* HXTAL is stable */
     /* AHB = SYSCLK */
