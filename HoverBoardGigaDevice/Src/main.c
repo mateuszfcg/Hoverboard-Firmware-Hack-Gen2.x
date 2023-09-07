@@ -363,8 +363,10 @@ int main (void)
 			pwmSlave = CLAMP(xScale * pwmMaster, -1000, 1000);
 		}
 		
-		// Read charge state
-		chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
+		#ifdef CHARGE_STATE_PIN
+			// Read charge state
+			chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
+		#endif
 		
 		// Enable is depending on charger is connected or not
 		enable = chargeStateLowActive;

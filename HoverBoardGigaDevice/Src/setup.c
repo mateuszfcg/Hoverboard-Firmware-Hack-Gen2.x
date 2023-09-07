@@ -240,8 +240,10 @@ void GPIO_init(void)
 	// Init button
 	gpio_mode_set(BUTTON_PORT , GPIO_MODE_INPUT, GPIO_PUPD_NONE, BUTTON_PIN);	
 	
-	// Init charge state
-	gpio_mode_set(CHARGE_STATE_PORT, GPIO_MODE_INPUT, GPIO_PUPD_PULLUP, CHARGE_STATE_PIN);
+	#ifdef CHARGE_STATE_PIN
+		// Init charge state
+		gpio_mode_set(CHARGE_STATE_PORT, GPIO_MODE_INPUT, GPIO_PUPD_PULLUP, CHARGE_STATE_PIN);
+	#endif
 #endif
 }
 	
