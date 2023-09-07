@@ -219,14 +219,15 @@ void GPIO_init(void)
 	gpio_mode_set(SELF_HOLD_PORT , GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, SELF_HOLD_PIN);	
 	gpio_output_options_set(SELF_HOLD_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_10MHZ, SELF_HOLD_PIN);
 	
-	// Init USART0
-	gpio_mode_set(USART_STEER_COM_TX_PORT , GPIO_MODE_AF, GPIO_PUPD_PULLUP, USART_STEER_COM_TX_PIN);	
-	gpio_mode_set(USART_STEER_COM_RX_PORT , GPIO_MODE_AF, GPIO_PUPD_PULLUP, USART_STEER_COM_RX_PIN);
-	gpio_output_options_set(USART_STEER_COM_TX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, USART_STEER_COM_TX_PIN);
-	gpio_output_options_set(USART_STEER_COM_RX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, USART_STEER_COM_RX_PIN);	
-	gpio_af_set(USART_STEER_COM_TX_PORT, USART_STEER_AF, USART_STEER_COM_TX_PIN);
-	gpio_af_set(USART_STEER_COM_RX_PORT, USART_STEER_AF, USART_STEER_COM_RX_PIN);
-	
+	#ifdef USART_STEER_COM
+		// Init USART0
+		gpio_mode_set(USART_STEER_COM_TX_PORT , GPIO_MODE_AF, GPIO_PUPD_PULLUP, USART_STEER_COM_TX_PIN);	
+		gpio_mode_set(USART_STEER_COM_RX_PORT , GPIO_MODE_AF, GPIO_PUPD_PULLUP, USART_STEER_COM_RX_PIN);
+		gpio_output_options_set(USART_STEER_COM_TX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, USART_STEER_COM_TX_PIN);
+		gpio_output_options_set(USART_STEER_COM_RX_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, USART_STEER_COM_RX_PIN);	
+		gpio_af_set(USART_STEER_COM_TX_PORT, USART_STEER_AF, USART_STEER_COM_TX_PIN);
+		gpio_af_set(USART_STEER_COM_RX_PORT, USART_STEER_AF, USART_STEER_COM_RX_PIN);
+	#endif
 	
 #ifdef BUZZER
 	// Init buzzer
@@ -465,6 +466,8 @@ void USART_MasterSlave_init(void)
 //----------------------------------------------------------------------------
 void USART_Steer_COM_init(void)
 {
+#ifdef USART_STEER_COM
+	
 		// Enable ADC and DMA clock
 	rcu_periph_clock_enable(USART_STEER_RCU);
 	rcu_periph_clock_enable(RCU_DMA);
@@ -516,4 +519,5 @@ void USART_Steer_COM_init(void)
 	
 	// Enable dma receive channel
 	dma_channel_enable(DMA_CH2);
+#endif
 }

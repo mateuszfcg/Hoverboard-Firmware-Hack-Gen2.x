@@ -27,6 +27,7 @@
 
 
 // Brushless Control DC (BLDC) defines
+#define TIMER_BLDC_PULLUP	GPIO_PUPD_NONE	// robo
 // Channel G
 #define RCU_TIMER_BLDC RCU_TIMER0
 #define TIMER_BLDC TIMER0

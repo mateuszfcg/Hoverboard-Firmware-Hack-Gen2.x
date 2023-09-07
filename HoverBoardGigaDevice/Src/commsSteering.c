@@ -84,7 +84,9 @@ void SendSteerDevice(void)
 
 	oData.checksum = 	CalcCRC((uint8_t*) &oData, sizeof(oData) - 2);	// (first bytes except crc)
 
-	SendBuffer(USART_STEER_COM, (uint8_t*) &oData, sizeof(oData));
+	#ifdef USART_STEER_COM
+		SendBuffer(USART_STEER_COM, (uint8_t*) &oData, sizeof(oData));
+	#endif
 	
 	//oDataSlave.wState = 11;
 }

@@ -153,43 +153,44 @@ void DMA_Channel0_IRQHandler(void)
 	}
 }
 
-// This function handles DMA_Channel1_2_IRQHandler interrupt
-// Is asynchronously called when USART0 RX finished
-void DMA_Channel1_2_IRQHandler(void)
-{
-	//DEBUG_LedSet(SET) // (steerCounter%20) < 10		
-	// USART steer/bluetooth RX
-	if (dma_interrupt_flag_get(DMA_CH2, DMA_INT_FLAG_FTF))
+#ifdef USART_STEER_COM
+	// This function handles DMA_Channel1_2_IRQHandler interrupt
+	// Is asynchronously called when USART0 RX finished
+	void DMA_Channel1_2_IRQHandler(void)
 	{
-#ifdef MASTER
-		// Update USART steer input mechanism
-		UpdateUSARTSteerInput();
-#endif
-#ifdef SLAVE
-		// Update USART bluetooth input mechanism
-		UpdateUSARTBluetoothInput();
-#endif
-		dma_interrupt_flag_clear(DMA_CH2, DMA_INT_FLAG_FTF);        
+		//DEBUG_LedSet(SET) // (steerCounter%20) < 10		
+		// USART steer/bluetooth RX
+		if (dma_interrupt_flag_get(DMA_CH2, DMA_INT_FLAG_FTF))
+		{
+	#ifdef MASTER
+			// Update USART steer input mechanism
+			UpdateUSARTSteerInput();
+	#endif
+	#ifdef SLAVE
+			// Update USART bluetooth input mechanism
+			UpdateUSARTBluetoothInput();
+	#endif
+			dma_interrupt_flag_clear(DMA_CH2, DMA_INT_FLAG_FTF);        
+		}
 	}
-}
-
+#endif
 
 #ifdef USART_MASTERSLAVE
-//----------------------------------------------------------------------------
-// This function handles DMA_Channel3_4_IRQHandler interrupt
-// Is asynchronously called when USART_SLAVE RX finished
-//----------------------------------------------------------------------------
-void DMA_Channel3_4_IRQHandler(void)
-{
-	// USART master slave RX
-	if (dma_interrupt_flag_get(DMA_CH4, DMA_INT_FLAG_FTF))
+	//----------------------------------------------------------------------------
+	// This function handles DMA_Channel3_4_IRQHandler interrupt
+	// Is asynchronously called when USART_SLAVE RX finished
+	//----------------------------------------------------------------------------
+	void DMA_Channel3_4_IRQHandler(void)
 	{
-		// Update USART master slave input mechanism
-		UpdateUSARTMasterSlaveInput();
-		
-		dma_interrupt_flag_clear(DMA_CH4, DMA_INT_FLAG_FTF);        
+		// USART master slave RX
+		if (dma_interrupt_flag_get(DMA_CH4, DMA_INT_FLAG_FTF))
+		{
+			// Update USART master slave input mechanism
+			UpdateUSARTMasterSlaveInput();
+			
+			dma_interrupt_flag_clear(DMA_CH4, DMA_INT_FLAG_FTF);        
+		}
 	}
-}
 #endif
 
 //----------------------------------------------------------------------------
