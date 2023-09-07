@@ -114,7 +114,7 @@ void TimeoutTimer_init(void)
 	timer_init(TIMER13, &timeoutTimer_paramter_struct);
 	
 	// Enable TIMER_INT_UP interrupt and set priority
-	nvic_irq_enable(TIMER13_IRQn, 0, 0);
+	TARGET_nvic_irq_enable(TIMER13_IRQn, 0, 0);
 	timer_interrupt_enable(TIMER13, TIMER_INT_UP);
 	
 	// Enable timer
@@ -324,7 +324,7 @@ void PWM_init(void)
 	timer_channel_complementary_output_state_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_Y, TIMER_CCXN_ENABLE);
 	
 	// Enable TIMER_INT_UP interrupt and set priority
-	nvic_irq_enable(TIMER0_BRK_UP_TRG_COM_IRQn, 0, 0);
+	TARGET_nvic_irq_enable(TIMER0_BRK_UP_TRG_COM_IRQn, 0, 0);
 	timer_interrupt_enable(TIMER_BLDC, TIMER_INT_UP);
 	
 	// Enable the timer and start PWM
@@ -344,7 +344,7 @@ void ADC_init(void)
 	rcu_adc_clock_config(RCU_ADCCK_APB2_DIV6);
 	
 	// Interrupt channel 0 enable
-	nvic_irq_enable(DMA_Channel0_IRQn, 1, 0);
+	TARGET_nvic_irq_enable(DMA_Channel0_IRQn, 1, 0);
 	
 	// Initialize DMA channel 0 for ADC
 	dma_deinit(DMA_CH0);
@@ -427,7 +427,7 @@ void USART_MasterSlave_init(void)
 		usart_enable(USART_MASTERSLAVE);
 		
 		// Interrupt channel 3/4 enable
-		nvic_irq_enable(DMA_Channel3_4_IRQn, 2, 0);
+		TARGET_nvic_irq_enable(DMA_Channel3_4_IRQn, 2, 0);
 		
 		// Initialize DMA channel 4 for USART_SLAVE RX
 		dma_deinit(DMA_CH4);
@@ -486,7 +486,7 @@ void USART_Steer_COM_init(void)
 	usart_enable(USART_STEER_COM);
 	
 	// Interrupt channel 1/2 enable
-	nvic_irq_enable(DMA_Channel1_2_IRQn, 2, 0);
+	TARGET_nvic_irq_enable(DMA_Channel1_2_IRQn, 2, 0);
 	
 	// Initialize DMA channel 2 for USART_STEER_COM RX
 	dma_deinit(DMA_CH2);
