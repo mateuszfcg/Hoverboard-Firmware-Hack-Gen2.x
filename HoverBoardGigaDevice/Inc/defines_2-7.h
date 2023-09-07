@@ -1,4 +1,4 @@
-#ifdef MASTER		// layout 2.2 has buzzer on the slave board.
+#ifdef SLAVE		// layout 2.2 has buzzer on the slave board.
 	#define BUZZER
 #endif
 
@@ -64,17 +64,17 @@
 
 // Usart master slave defines
 #define USART_MASTERSLAVE USART1
-#define USART_MASTERSLAVE_TX_PIN GPIO_PIN_2		// TODO
-#define USART_MASTERSLAVE_TX_PORT GPIOA				// TODO
-#define USART_MASTERSLAVE_RX_PIN GPIO_PIN_3		// TODO
-#define USART_MASTERSLAVE_RX_PORT GPIOA				// TODO
+#define USART_MASTERSLAVE_TX_PIN GPIO_PIN_2		//PA2  SAME AS 2.0 :-)
+#define USART_MASTERSLAVE_TX_PORT GPIOA				//PA2  SAME AS 2.0 :-)
+#define USART_MASTERSLAVE_RX_PIN GPIO_PIN_3		//PA3  SAME AS 2.0 :-)
+#define USART_MASTERSLAVE_RX_PORT GPIOA				//PA3  SAME AS 2.0 :-)
 
 // ADC defines
-#define VBATT_PIN	GPIO_PIN_0				// TODO
-#define VBATT_PORT GPIOA						// TODO
+#define VBATT_PIN	GPIO_PIN_4				//PA4
+#define VBATT_PORT GPIOA						//PA4
 #define VBATT_CHANNEL ADC_CHANNEL_4
-#define CURRENT_DC_PIN	GPIO_PIN_1	// TODO
-#define CURRENT_DC_PORT GPIOA				// TODO
+#define CURRENT_DC_PIN	GPIO_PIN_6	//PA6
+#define CURRENT_DC_PORT GPIOA				//PA6
 #define CURRENT_DC_CHANNEL ADC_CHANNEL_6
 
 // Self hold defines
@@ -82,23 +82,23 @@
 // main.c:306: gpio_bit_write(SELF_HOLD_PORT, SELF_HOLD_PIN, SET); 
 // and turns off power on Shutdown:
 // main.c:513:	 gpio_bit_write(SELF_HOLD_PORT, SELF_HOLD_PIN, RESET); 
-#define SELF_HOLD_PIN GPIO_PIN_2		// TODO
-#define SELF_HOLD_PORT GPIOB				// TODO
+#define SELF_HOLD_PIN GPIO_PIN_2		// PB2
+#define SELF_HOLD_PORT GPIOB				// PB2
 
 // Button defines
 // on/off (POW) push-button. So also a connection (i guess with some smd resistor in between) to a MCU pin.
 // main.c:457: if (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN)) 
-#define BUTTON_PIN GPIO_PIN_15			// TODO
-#define BUTTON_PORT GPIOC						// TODO
+#define BUTTON_PIN GPIO_PIN_5			// PA5
+#define BUTTON_PORT GPIOA					// PA5
 
 // Usart steer defines
-#define USART_STEER_COM USART0					// TODO
-#define USART_STEER_RCU RCU_USART0
-#define USART_STEER_AF	GPIO_AF_0
-#define USART_STEER_COM_TX_PIN GPIO_PIN_6		// TODO
-#define USART_STEER_COM_TX_PORT GPIOB				// TODO
-#define USART_STEER_COM_RX_PIN GPIO_PIN_7		// TODO
-#define USART_STEER_COM_RX_PORT GPIOB				// TODO
+//#define USART_STEER_COM USART0					// NC
+//#define USART_STEER_RCU RCU_USART0
+//#define USART_STEER_AF	GPIO_AF_0
+//#define USART_STEER_COM_TX_PIN GPIO_PIN_6		// NC
+//#define USART_STEER_COM_TX_PORT GPIOB				// NC
+//#define USART_STEER_COM_RX_PIN GPIO_PIN_7		// NC
+//#define USART_STEER_COM_RX_PORT GPIOB				// NC
 
 #ifdef BUZZER
 	// Buzzer defines
@@ -106,14 +106,14 @@
 	#define BUZZER_PORT GPIOB				// TODO
 #endif
 
-#ifdef MASTER
-	// Charge state defines
-	// This seems to be a digital input that hast to be high in order to enable the motors. 
-	// main.c:381: chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
-	// If not found it should be okay to simply comment this line because chargeStateLowActive in initialised as set = true
-	#define CHARGE_STATE_PIN GPIO_PIN_0		
-	#define CHARGE_STATE_PORT GPIOF				
-#endif
+//#ifdef MASTER
+//	// Charge state defines
+//	// This seems to be a digital input that hast to be high in order to enable the motors. 
+//	// main.c:381: chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
+//	// If not found it should be okay to simply comment this line because chargeStateLowActive in initialised as set = true
+//	#define CHARGE_STATE_PIN GPIO_PIN_0		
+//	#define CHARGE_STATE_PORT GPIOF				
+//#endif
 
 // Debug pin defines - seems to be never used in code.
 #define DEBUG_PIN TODO_PIN
