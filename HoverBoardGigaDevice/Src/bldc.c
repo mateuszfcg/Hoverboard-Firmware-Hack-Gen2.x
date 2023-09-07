@@ -183,12 +183,12 @@ void CalculateBLDC(void)
 	if (currentDC > DC_CUR_LIMIT || bldc_enable == RESET || timedOut == SET)
 	{
 		timer_automatic_output_disable(TIMER_BLDC);		
-		DEBUG_LedSet(SET)
+		//DEBUG_LedSet(SET)
   }
 	else
 	{
 		timer_automatic_output_enable(TIMER_BLDC);
-		DEBUG_LedSet(hall_c == 0)
+		//DEBUG_LedSet(hall_c == 0)
   }
 
 	//if (timedOut == SET)	DEBUG_LedSet((steerCounter%2) < 1)		

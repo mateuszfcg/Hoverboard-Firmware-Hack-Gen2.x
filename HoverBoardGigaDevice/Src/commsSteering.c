@@ -138,7 +138,7 @@ void UpdateUSARTSteerInputNew(void)	// get rid of this stupid struct __attribute
 		if (cRead == (START_FRAME >> 8)	)	
 		{
 			iReceivePos++;
-			DEBUG_LedSet(RESET)
+			//DEBUG_LedSet(RESET)
 		}
 		break;
 	case 1:	// expecting second byte of START_FRAME
@@ -160,7 +160,7 @@ void UpdateUSARTSteerInputNew(void)	// get rid of this stupid struct __attribute
 			if (1)	// disable checksum for testing ONLY !
 			//if (pData->checksum == CalcCRC(aReceiveBuffer, sizeof(SerialServer2Hover) - 2))	//  first bytes except crc
 			{
-				DEBUG_LedSet(SET) // 		(steerCounter%2) < 1
+				//DEBUG_LedSet(SET) // 		(steerCounter%2) < 1
 				#ifndef TEST_SPEED	// only use received uart command if NOT in TEST_SPEED mode
 					speed = pData->iSpeed;
 					steer = pData->iSteer;

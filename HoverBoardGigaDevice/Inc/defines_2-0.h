@@ -3,6 +3,8 @@
 #endif
 
 
+
+
 // LED defines
 #define LED_GREEN GPIO_PIN_15
 #define LED_GREEN_PORT GPIOA
@@ -15,6 +17,10 @@
 #define UPPER_LED_PORT GPIOA
 #define LOWER_LED_PIN GPIO_PIN_0
 #define LOWER_LED_PORT GPIOA
+
+//#define DEBUG_LED_PIN 	UPPER_LED_PIN
+//#define DEBUG_LED_PORT 	UPPER_LED_PORT
+
 
 // Mosfet output
 #define MOSFET_OUT_PIN GPIO_PIN_13
