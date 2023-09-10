@@ -33,7 +33,7 @@
 #define TIMER_BLDC TIMER0
 #define TIMER_BLDC_CHANNEL_G TIMER_CH_2 // PB15-TIMER0_CH2_ON, PA10-TIMER0_CH2  SAME AS 2.0 :-)
 #define TIMER_BLDC_GH_PIN GPIO_PIN_15		// PB15 - Hi Lo Swapped from 2.0
-#define TIMER_BLDC_GH_PORT GPIOB				// PB15 - Lo Swapped from 2.0
+#define TIMER_BLDC_GH_PORT GPIOB				// PB15 - Hi Lo Swapped from 2.0
 #define TIMER_BLDC_GL_PIN GPIO_PIN_10		// PA10 - Hi Lo Swapped from 2.0
 #define TIMER_BLDC_GL_PORT GPIOA				// PA10 - Hi Lo Swapped from 2.0
 // Channel B
