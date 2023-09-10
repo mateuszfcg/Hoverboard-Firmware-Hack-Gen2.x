@@ -193,22 +193,23 @@ void GPIO_init(void)
 	gpio_mode_set(TIMER_BLDC_EMERGENCY_SHUTDOWN_PORT , GPIO_MODE_AF, GPIO_PUPD_NONE, TIMER_BLDC_EMERGENCY_SHUTDOWN_PIN);
 	gpio_af_set(TIMER_BLDC_EMERGENCY_SHUTDOWN_PORT, GPIO_AF_2, TIMER_BLDC_EMERGENCY_SHUTDOWN_PIN);
 	
-	// Init PWM output Pins (Configure as alternate functions, push-pull, no pullup)
+	// Init PWM output Pins
+	// Configure: Alternate functions,  [Floating mode] / Pull-up / Pull-down
   gpio_mode_set(TIMER_BLDC_GH_PORT, GPIO_MODE_AF, TIMER_BLDC_PULLUP, TIMER_BLDC_GH_PIN);
 	gpio_mode_set(TIMER_BLDC_BH_PORT, GPIO_MODE_AF, TIMER_BLDC_PULLUP, TIMER_BLDC_BH_PIN);
 	gpio_mode_set(TIMER_BLDC_YH_PORT, GPIO_MODE_AF, TIMER_BLDC_PULLUP, TIMER_BLDC_YH_PIN);
 	gpio_mode_set(TIMER_BLDC_GL_PORT, GPIO_MODE_AF, TIMER_BLDC_PULLUP, TIMER_BLDC_GL_PIN);
 	gpio_mode_set(TIMER_BLDC_BL_PORT, GPIO_MODE_AF, TIMER_BLDC_PULLUP, TIMER_BLDC_BL_PIN);
 	gpio_mode_set(TIMER_BLDC_YL_PORT, GPIO_MODE_AF, TIMER_BLDC_PULLUP, TIMER_BLDC_YL_PIN);
-	
+	// Configure: Push-Pull mode, Output max speed 2MHz
   gpio_output_options_set(TIMER_BLDC_GH_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_2MHZ, TIMER_BLDC_GH_PIN);
   gpio_output_options_set(TIMER_BLDC_BH_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_2MHZ, TIMER_BLDC_BH_PIN);
   gpio_output_options_set(TIMER_BLDC_YH_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_2MHZ, TIMER_BLDC_YH_PIN);
 	gpio_output_options_set(TIMER_BLDC_GL_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_2MHZ, TIMER_BLDC_GL_PIN);
   gpio_output_options_set(TIMER_BLDC_BL_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_2MHZ, TIMER_BLDC_BL_PIN);
   gpio_output_options_set(TIMER_BLDC_YL_PORT, GPIO_OTYPE_PP, GPIO_OSPEED_2MHZ, TIMER_BLDC_YL_PIN);
-
-  gpio_af_set(TIMER_BLDC_GH_PORT, GPIO_AF_2, TIMER_BLDC_GH_PIN);
+	// Configure: GPIO pin af function, please refer to specific device datasheet (GPIO_AF_2)
+  gpio_af_set(TIMER_BLDC_GH_PORT, GPIO_AF_2, TIMER_BLDC_GH_PIN); //GPIO_AF_2
   gpio_af_set(TIMER_BLDC_BH_PORT, GPIO_AF_2, TIMER_BLDC_BH_PIN);
 	gpio_af_set(TIMER_BLDC_YH_PORT, GPIO_AF_2, TIMER_BLDC_YH_PIN);
 	gpio_af_set(TIMER_BLDC_GL_PORT, GPIO_AF_2, TIMER_BLDC_GL_PIN);
@@ -281,6 +282,15 @@ void PWM_init(void)
 	timer_channel_output_shadow_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_Y, TIMER_OC_SHADOW_DISABLE);
 	
 	// Set output channel PWM type to PWM1
+	/*
+	CH0COMCTL[2:0]
+	110: PWM mode0.
+	When counting up, OxCPRE is high when the counter is smaller than TIMER0_CHxCV, and low otherwise.
+	When counting down, OxCPRE is low when the counter is larger than TIMER0_CHxCV, and high otherwise.
+	111: PWM mode1.
+	When counting up, OxCPRE is low when the counter is smaller than TIMER0_CHxCV, and high otherwise.
+	When counting down, OxCPRE is high when the counter is larger than TIMER0_CHxCV, and low otherwise.
+	*/
 	timer_channel_output_mode_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_G, TIMER_OC_MODE_PWM1);
 	timer_channel_output_mode_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_B, TIMER_OC_MODE_PWM1);
 	timer_channel_output_mode_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_Y, TIMER_OC_MODE_PWM1);
@@ -291,8 +301,8 @@ void PWM_init(void)
 	timer_channel_output_pulse_value_config(TIMER_BLDC, TIMER_BLDC_CHANNEL_Y, 0);
 	
 	// Set up the output channel parameter struct
-	timerBldc_oc_parameter_struct.ocpolarity 		= TIMER_OC_POLARITY_HIGH;
-	timerBldc_oc_parameter_struct.ocnpolarity 	= TIMER_OCN_POLARITY_LOW;
+	timerBldc_oc_parameter_struct.ocpolarity 		= TIMER_OC_POLARITY_HIGH; //HIGH: CHx_O is the same as OxCPRE , LOW: CHx_O is contrary to OxCPRE
+	timerBldc_oc_parameter_struct.ocnpolarity 	= TIMER_OCN_POLARITY_LOW; //HIGH: CHx_ON is contrary to OxCPRE, LOW: CHx_O is the same as OxCPRE
 	timerBldc_oc_parameter_struct.ocidlestate 	= TIMER_OC_IDLE_STATE_LOW;
 	timerBldc_oc_parameter_struct.ocnidlestate 	= TIMER_OCN_IDLE_STATE_HIGH;
 	
