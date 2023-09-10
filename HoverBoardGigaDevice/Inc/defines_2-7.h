@@ -112,8 +112,8 @@
 	// This seems to be a digital input that hast to be high in order to enable the motors. 
 	// main.c:381: chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
 	// If not found it should be okay to simply comment this line because chargeStateLowActive in initialised as set = true
-	//#define CHARGE_STATE_PIN TODO_PIN
-	//#define CHARGE_STATE_PORT TODO_PORT		
+	#define CHARGE_STATE_PIN GPIO_PIN_15
+	#define CHARGE_STATE_PORT GPIOC
 #endif
 
 // Debug pin defines - seems to be never used in code.

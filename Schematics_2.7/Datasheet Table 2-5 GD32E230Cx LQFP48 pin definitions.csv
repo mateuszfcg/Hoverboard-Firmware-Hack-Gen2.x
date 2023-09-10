@@ -28,7 +28,7 @@ YH,PB13,26,I/O,"Default: PB13 Alternate: SPI0_SCK^{(3)} , SPI1_SCK^{(5)} , TIMER
 BH,PB14,27,I/O,"Default: PB14 Alternate: SPI0_MISO^{(3)} , SPI1_MISO^{(5)} , TIMER0_CH1_ON, TIMER14_CH0^{(5)} , I2C1_SDA^{(5)}"
 GH,PB15,28,I/O,"Default: PB15 Alternate: SPI0_MOSI^{(3)} , SPI1_MOSI^{(5)} , TIMER0_CH2_ON, TIMER14_CH0_ON^{(5)} , TIMER14_CH1^{(5)} Additional: RTC_REFIN, WKUP6"
 HB,PC14-OSC32IN,3,I/O,Default: PC14 Additional: OSC32IN
-,PC15-OSC32OUT,4,I/O,Default: PC15 Additional: OSC32OUT
+ChargeState,PC15-OSC32OUT,4,I/O,Default: PC15 Additional: OSC32OUT
 ,PF0/OSCIN,5,I/O,Default: PF0 Alternate: I2C0_SDA Additional: OSCIN
 ,PF1/OSCOU T,6,I/O,Default: PF1 Alternate: I2C0_SCL Additional: OSCOUT
 ,PF6,35,I/O,"Default: PF6 Alternate: I2C0_SCL^{(3)} , I2C1_SCL^{(5)}"
