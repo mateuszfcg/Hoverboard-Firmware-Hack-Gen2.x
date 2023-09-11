@@ -31,19 +31,19 @@
 // Channel G
 #define RCU_TIMER_BLDC RCU_TIMER0
 #define TIMER_BLDC TIMER0
-#define TIMER_BLDC_CHANNEL_G TIMER_CH_2 // PB15-TIMER0_CH2_ON, PA10-TIMER0_CH2  SAME AS 2.0 :-)
+#define TIMER_BLDC_CHANNEL_G TIMER_CH_2 // PB15-TIMER0_CH2_ON (GPIO_AF_2), PA10-TIMER0_CH2 (GPIO_AF_2)  SAME AS 2.0 :-)
 #define TIMER_BLDC_GH_PIN GPIO_PIN_15		// PB15 - Hi Lo Swapped from 2.0
-#define TIMER_BLDC_GH_PORT GPIOB				// PB15 - Lo Swapped from 2.0
+#define TIMER_BLDC_GH_PORT GPIOB				// PB15 - Hi Lo Swapped from 2.0
 #define TIMER_BLDC_GL_PIN GPIO_PIN_10		// PA10 - Hi Lo Swapped from 2.0
 #define TIMER_BLDC_GL_PORT GPIOA				// PA10 - Hi Lo Swapped from 2.0
 // Channel B
-#define TIMER_BLDC_CHANNEL_B TIMER_CH_1 // PB14-TIMER0_CH1_ON, PA9-TIMER0_CH1  SAME AS 2.0 :-)
+#define TIMER_BLDC_CHANNEL_B TIMER_CH_1 // PB14-TIMER0_CH1_ON (GPIO_AF_2), PA9-TIMER0_CH1 (GPIO_AF_2)  SAME AS 2.0 :-)
 #define TIMER_BLDC_BH_PIN GPIO_PIN_14		// PB14 - Hi Lo Swapped from 2.0
 #define TIMER_BLDC_BH_PORT GPIOB				// PB14 - Hi Lo Swapped from 2.0
 #define TIMER_BLDC_BL_PIN GPIO_PIN_9		// PA9 - Hi Lo Swapped from 2.0
 #define TIMER_BLDC_BL_PORT GPIOA				// PA9 - Hi Lo Swapped from 2.0
 // Channel Y
-#define TIMER_BLDC_CHANNEL_Y TIMER_CH_0 // PB13-TIMER0_CH0_ON, PA8-TIMER0_CH0  SAME AS 2.0 :-)
+#define TIMER_BLDC_CHANNEL_Y TIMER_CH_0 // PB13-TIMER0_CH0_ON (GPIO_AF_2), PA8-TIMER0_CH0 (GPIO_AF_2)  SAME AS 2.0 :-)
 #define TIMER_BLDC_YH_PIN GPIO_PIN_13		// PB13 - Hi Lo Swapped from 2.0
 #define TIMER_BLDC_YH_PORT GPIOB				// PB13 - Hi Lo Swapped from 2.0
 #define TIMER_BLDC_YL_PIN GPIO_PIN_8		// PA8 - Hi Lo Swapped from 2.0
@@ -112,8 +112,8 @@
 	// This seems to be a digital input that hast to be high in order to enable the motors. 
 	// main.c:381: chargeStateLowActive = gpio_input_bit_get(CHARGE_STATE_PORT, CHARGE_STATE_PIN);
 	// If not found it should be okay to simply comment this line because chargeStateLowActive in initialised as set = true
-	//#define CHARGE_STATE_PIN TODO_PIN
-	//#define CHARGE_STATE_PORT TODO_PORT		
+	#define CHARGE_STATE_PIN GPIO_PIN_15
+	#define CHARGE_STATE_PORT GPIOC
 #endif
 
 // Debug pin defines - seems to be never used in code.
