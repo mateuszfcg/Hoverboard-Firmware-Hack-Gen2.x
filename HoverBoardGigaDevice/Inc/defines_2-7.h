@@ -1,4 +1,4 @@
-#ifdef SLAVE		// layout 2.2 has buzzer on the slave board.
+#ifdef SLAVE		// layout 2.7 has buzzer on the slave board.
 	#define BUZZER
 #endif
 
@@ -7,17 +7,17 @@
 #define TODO_PIN	GPIO_PIN_4	// PF4 is only accessible on the largest GD32F130Rx LQFP64 pinouts mcu
 
 // LED defines
-#define LED_GREEN TODO_PIN				
-#define LED_GREEN_PORT TODO_PORT	
-#define LED_ORANGE TODO_PIN				
-#define LED_ORANGE_PORT TODO_PORT	
-#define LED_RED TODO_PIN					
-#define LED_RED_PORT TODO_PORT		
+#define LED_GREEN GPIO_PIN_3				
+#define LED_GREEN_PORT GPIOB	
+#define LED_ORANGE GPIO_PIN_4				
+#define LED_ORANGE_PORT GPIOB	
+#define LED_RED GPIO_PIN_5					
+#define LED_RED_PORT GPIOB
 
-#define UPPER_LED_PIN TODO_PIN		
-#define UPPER_LED_PORT TODO_PORT	
-#define LOWER_LED_PIN TODO_PIN		
-#define LOWER_LED_PORT TODO_PORT	
+#define UPPER_LED_PIN GPIO_PIN_0		
+#define UPPER_LED_PORT GPIOF	
+#define LOWER_LED_PIN GPIO_PIN_1		
+#define LOWER_LED_PORT GPIOF	
 
 // Mosfet output
 // seems to be an ordinary LED output ?
@@ -52,8 +52,8 @@
 // Timer BLDC short circuit emergency shutoff define
 // Is initialized here but never used somewhere else in code.
 // setup.c:176	gpio_mode_set(TIMER_BLDC_EMERGENCY_SHUTDOWN_PORT , GPIO_MODE_AF, GPIO_PUPD_NONE, TIMER_BLDC_EMERGENCY_SHUTDOWN_PIN);  
-#define TIMER_BLDC_EMERGENCY_SHUTDOWN_PIN GPIO_PIN_12	// NC
-#define TIMER_BLDC_EMERGENCY_SHUTDOWN_PORT GPIOB		// NC
+#define TIMER_BLDC_EMERGENCY_SHUTDOWN_PIN TODO_PIN //GPIO_PIN_12	// NC
+#define TIMER_BLDC_EMERGENCY_SHUTDOWN_PORT TODO_PORT //GPIOB		// NC
 
 // Hall sensor defines
 #define HALL_A_PIN GPIO_PIN_1	  // PA1 - GREEN
@@ -120,3 +120,7 @@
 #define DEBUG_PIN TODO_PIN
 #define DEBUG_PORT TODO_PORT
 
+
+// Debug LED
+#define DEBUG_LED_PIN 	UPPER_LED_PIN
+#define DEBUG_LED_PORT 	UPPER_LED_PORT
