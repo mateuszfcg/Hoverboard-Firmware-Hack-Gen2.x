@@ -28,7 +28,7 @@
 	#define SPEED_COEFFICIENT   -1
 	#define STEER_COEFFICIENT   1
 	
-	//#define CHECK_BUTTON		// disable = add '//' if you use a slave board as master
+	#define CHECK_BUTTON		// disable = add '//' if you use a slave board as master
 #else
 	#define SLAVE 												// Select if firmware is for master or slave board
 #endif
@@ -41,7 +41,7 @@
 
 #define DC_CUR_LIMIT     		15        // Motor DC current limit in amps
 
-#define BAT_CELLS         	10        // battery number of cells. Normal Hoverboard battery: 10s
+#define BAT_CELLS         	5        // battery number of cells. Normal Hoverboard battery: 10s
 
 //#define BLDC_WEAKENING		// some kind of field weaking added by HarleyBob for his gen2.2 firmware ?
 
