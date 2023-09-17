@@ -1,4 +1,5 @@
-./objects/system_gd32e23x.o: RTE\Device\GD32E230C8\system_gd32e23x.c \
+./objects/gd32e23x_fmc.o: RTE\Device\GD32E230C8\gd32e23x_fmc.c \
+  C:\Users\Matt\AppData\Local\Arm\Packs\GigaDevice\GD32E23x_DFP\1.0.2\Device\Firmware\Peripherals\inc\gd32e23x_fmc.h \
   C:\Users\Matt\AppData\Local\Arm\Packs\GigaDevice\GD32E23x_DFP\1.0.2\Device\Include\gd32e23x.h \
   C:\Users\Matt\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm23.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
@@ -10,7 +11,6 @@
   RTE\_GD32E230C8T6\RTE_Components.h \
   C:\Users\Matt\AppData\Local\Arm\Packs\GigaDevice\GD32E23x_DFP\1.0.2\Device\Firmware\Peripherals\inc\gd32e23x_adc.h \
   C:\Users\Matt\AppData\Local\Arm\Packs\GigaDevice\GD32E23x_DFP\1.0.2\Device\Firmware\Peripherals\inc\gd32e23x_dma.h \
-  C:\Users\Matt\AppData\Local\Arm\Packs\GigaDevice\GD32E23x_DFP\1.0.2\Device\Firmware\Peripherals\inc\gd32e23x_fmc.h \
   C:\Users\Matt\AppData\Local\Arm\Packs\GigaDevice\GD32E23x_DFP\1.0.2\Device\Firmware\Peripherals\inc\gd32e23x_fwdgt.h \
   C:\Users\Matt\AppData\Local\Arm\Packs\GigaDevice\GD32E23x_DFP\1.0.2\Device\Firmware\Peripherals\inc\gd32e23x_gpio.h \
   C:\Users\Matt\AppData\Local\Arm\Packs\GigaDevice\GD32E23x_DFP\1.0.2\Device\Firmware\Peripherals\inc\gd32e23x_i2c.h \

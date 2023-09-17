@@ -20,6 +20,8 @@
 #define RTE_DEVICE_STDPERIPHERALS_ADC
 /* GigaDevice::Device:GD32E23x_StdPeripherals:DMA:1.0.0 */
 #define RTE_DEVICE_STDPERIPHERALS_DMA
+/* GigaDevice::Device:GD32E23x_StdPeripherals:FMC:1.0.0 */
+#define RTE_DEVICE_STDPERIPHERALS_FMC
 /* GigaDevice::Device:GD32E23x_StdPeripherals:FWDGT:1.0.0 */
 #define RTE_DEVICE_STDPERIPHERALS_FWDGT
 /* GigaDevice::Device:GD32E23x_StdPeripherals:GPIO:1.0.0 */

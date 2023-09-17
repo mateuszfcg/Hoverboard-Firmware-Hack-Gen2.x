@@ -283,7 +283,7 @@ int main (void)
 	
 	// Init GPIOs
 	GPIO_init();
-	DEBUG_LedSet(SET)
+	//DEBUG_LedSet(SET)
 	
 	// Activate self hold direct after GPIO-init
 	gpio_bit_write(SELF_HOLD_PORT, SELF_HOLD_PIN, SET);
@@ -312,7 +312,7 @@ int main (void)
 	while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN)){fwdgt_counter_reload();} // Reload watchdog while button is pressed
 #endif
 
-	DEBUG_LedSet(RESET)
+	//DEBUG_LedSet(RESET)
   while(1)
 	{
 		steerCounter++;		// something like DELAY_IN_MAIN_LOOP = 5 ms
