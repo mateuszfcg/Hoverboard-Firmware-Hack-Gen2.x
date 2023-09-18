@@ -32,7 +32,7 @@
 #### todo: version/layout 2.3:
 ![layout 2.3](https://raw.githubusercontent.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/main/Overview_2-3.jpg)
 - [details](Schematics_2.3/)
-
+- [issue](https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/20)
 
 #### todo: version/layout 2.4:
 ![layout 2.4](https://raw.githubusercontent.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/main/Overview_2-4.jpg)
