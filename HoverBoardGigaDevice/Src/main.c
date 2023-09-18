@@ -310,7 +310,7 @@ int main (void)
 #ifdef CHECK_BUTTON
 	// Wait until button is released
 	while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN)){fwdgt_counter_reload();} // Reload watchdog while button is pressed
-	Delay(100); //debounce to prevent immediate ShutOff
+	Delay(10); //debounce to prevent immediate ShutOff (100 is to much with a switch instead of a push button)
 #endif
 
 	//DEBUG_LedSet(RESET)
@@ -320,10 +320,10 @@ int main (void)
 		//DEBUG_LedSet((steerCounter%20) < 10)		
 
 		#ifdef TEST_SPEED
-			speed = 3 * (ABS((	((int32_t)steerCounter+100) % 400) - 200) - 100);
+			speed = 20 * (ABS((	((int32_t)steerCounter+100) % 400) - 200) - 100);
 			//speed = 15 * (ABS((	((int32_t)steerCounter+100) % 400) - 200) - 100);
 		  //#define SPEED 390  //760  //390
-			//speed = CLAMP(speed , -SPEED, SPEED);
+			speed = CLAMP(speed , -1000, 1000);
 		
 			//speed = 300;
 			//speed = 0;

@@ -126,7 +126,8 @@ void SetEnable(FlagStatus setEnable)
 //----------------------------------------------------------------------------
 void SetPWM(int16_t setPwm)
 {
-	bldc_inputFilterPwm = CLAMP(setPwm, -1000, 1000);
+	//	bldc_inputFilterPwm = CLAMP(setPwm, -1000, 1000);	// thanks to WizzardDr, bldc.c: pwm_res = 72000000 / 2 / PWM_FREQ; == 2250 and not 2000
+	bldc_inputFilterPwm = CLAMP(1.125*setPwm, -1125, 1125);
 }
 
 
