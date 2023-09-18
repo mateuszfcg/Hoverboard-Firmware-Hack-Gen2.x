@@ -57,7 +57,7 @@ static uint8_t sUSARTBluetoothRecordBufferCounter = 0;
 
 void CheckUSARTBluetoothInput(uint8_t USARTBuffer[]);
 void SendBluetoothDevice(uint8_t identifier, int16_t value);
-
+#ifdef USART_STEER_COM
 //----------------------------------------------------------------------------
 // Update USART bluetooth input
 //----------------------------------------------------------------------------
@@ -277,4 +277,5 @@ void SendBluetoothDevice(uint8_t identifier, int16_t value)
 	SendBuffer(USART_STEER_COM, buffer, index);
 }
 
+#endif
 #endif
