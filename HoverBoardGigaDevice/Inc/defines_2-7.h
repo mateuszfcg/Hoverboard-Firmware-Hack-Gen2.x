@@ -103,8 +103,8 @@
 
 #ifdef BUZZER
 	// Buzzer defines
-	#define BUZZER_PIN GPIO_PIN_8		// TODO
-	#define BUZZER_PORT GPIOB				// TODO
+	#define BUZZER_PIN GPIO_PIN_4		// PB4
+	#define BUZZER_PORT GPIOB				// PB4
 #endif
 
 #ifdef MASTER

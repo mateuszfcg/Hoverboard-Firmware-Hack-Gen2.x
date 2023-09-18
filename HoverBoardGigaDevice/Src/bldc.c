@@ -5,7 +5,7 @@
 #include "../Inc/defines.h"
 
 // Internal constants
-const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2000
+const int16_t pwm_res = 72000000 / 2 / PWM_FREQ; // = 2250
 
 // Global variables for voltage and current
 float batteryVoltage = 40.0;
