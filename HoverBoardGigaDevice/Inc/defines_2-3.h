@@ -4,28 +4,27 @@
 	#define BUZZER
 #endif
 
-#define TODO_PORT GPIOA				// this should be a pin that does no harm if input or output
-#define TODO_PIN	GPIO_PIN_15	// B15 is not accessibla on the smaller QFN32 32 pin MCU version
+//#define TODO_PORT GPIOA				// this should be a pin that does no harm if input or output
+//#define TODO_PIN	GPIO_PIN_15	// B15 is not accessibla on the smaller QFN32 32 pin MCU version
+#define TODO_PORT 	GPIOF		// this should be a pin that does no harm if input or output
+#define TODO_PIN	GPIO_PIN_4	// PF4 is only accessible on the largest GD32F130Rx LQFP64 pinouts mcu
 
 
+// LED defines, colors probably mismatch !
+#define LED_GREEN 			GPIO_PIN_15
+#define LED_GREEN_PORT 	GPIOA
+#define LED_ORANGE 			GPIO_PIN_14
+#define LED_ORANGE_PORT	GPIOA
+#define LED_RED 				GPIO_PIN_3
+#define LED_RED_PORT 		GPIOB
 
+#define UPPER_LED_PIN 	GPIO_PIN_4
+#define UPPER_LED_PORT 	GPIOB
+#define LOWER_LED_PIN 	GPIO_PIN_5
+#define LOWER_LED_PORT 	GPIOB
 
-// LED defines
-#define LED_GREEN 			TODO_PIN		// lerwinDE: GPIO_PIN_14 - in conflict with flash pins DIO and CLK !!!
-#define LED_GREEN_PORT 	TODO_PORT		// lerwinDE: GPIOA
-#define LED_ORANGE 			TODO_PIN		// TODO
-#define LED_ORANGE_PORT	TODO_PORT		// TODO
-#define LED_RED 				TODO_PIN		// lerwinDE: GPIO_PIN_13 - in conflict with flash pins DIO and CLK !!!
-#define LED_RED_PORT 		TODO_PORT		// lerwinDE: GPIOA
-
-#define UPPER_LED_PIN 	TODO_PIN	// TODO
-#define UPPER_LED_PORT 	TODO_PORT	// TODO
-#define LOWER_LED_PIN 	TODO_PIN	// TODO
-#define LOWER_LED_PORT 	TODO_PORT	// TODO
-
-
-#define DEBUG_LED_PIN 	GPIO_PIN_1	// lerwinDE: blue led panel
-#define DEBUG_LED_PORT 	GPIOF				// lerwinDE: blue led panel
+#define DEBUG_LED_PIN 	LED_RED
+#define DEBUG_LED_PORT 	LED_RED_PORT
 
 
 // Mosfet output
@@ -40,22 +39,22 @@
 #define RCU_TIMER_BLDC RCU_TIMER0
 #define TIMER_BLDC TIMER0
 #define TIMER_BLDC_CHANNEL_G TIMER_CH_2
-#define TIMER_BLDC_GH_PIN		GPIO_PIN_8		// GPIO_PIN_8	robo, based on Herleybob:defines.h
-#define TIMER_BLDC_GH_PORT	GPIOA				// GPIOA robo, based on Herleybob:defines.h
-#define TIMER_BLDC_GL_PIN		GPIO_PIN_13		// robo, based on Herleybob:defines.h
-#define TIMER_BLDC_GL_PORT	GPIOB				// robo, based on Herleybob:defines.h
+#define TIMER_BLDC_GH_PIN		GPIO_PIN_8		// channels G=green and Y=yellow swopped compared to 2.0
+#define TIMER_BLDC_GH_PORT	GPIOA
+#define TIMER_BLDC_GL_PIN		GPIO_PIN_13
+#define TIMER_BLDC_GL_PORT	GPIOB
 // Channel B
 #define TIMER_BLDC_CHANNEL_B TIMER_CH_1
-#define TIMER_BLDC_BH_PIN		GPIO_PIN_9		// robo, based on Herleybob:defines.h
-#define TIMER_BLDC_BH_PORT	GPIOA				// robo, based on Herleybob:defines.h
-#define TIMER_BLDC_BL_PIN		GPIO_PIN_14		// robo, based on Herleybob:defines.h
-#define TIMER_BLDC_BL_PORT	GPIOB				// robo, based on Herleybob:defines.h
+#define TIMER_BLDC_BH_PIN		GPIO_PIN_9
+#define TIMER_BLDC_BH_PORT	GPIOA
+#define TIMER_BLDC_BL_PIN		GPIO_PIN_14
+#define TIMER_BLDC_BL_PORT	GPIOB
 // Channel Y
 #define TIMER_BLDC_CHANNEL_Y TIMER_CH_0
-#define TIMER_BLDC_YH_PIN		GPIO_PIN_10		// robo, based on Herleybob:defines.h
-#define TIMER_BLDC_YH_PORT	GPIOA				// robo, based on Herleybob:defines.h
-#define TIMER_BLDC_YL_PIN		GPIO_PIN_15		// robo, based on Herleybob:defines.h
-#define TIMER_BLDC_YL_PORT	GPIOB				// robo, based on Herleybob:defines.h
+#define TIMER_BLDC_YH_PIN		GPIO_PIN_10
+#define TIMER_BLDC_YH_PORT	GPIOA
+#define TIMER_BLDC_YL_PIN		GPIO_PIN_15
+#define TIMER_BLDC_YL_PORT	GPIOB
 
 // Timer BLDC short circuit emergency shutoff define
 // Is initialized here but never used somewhere else in code.
@@ -64,20 +63,32 @@
 #define TIMER_BLDC_EMERGENCY_SHUTDOWN_PORT	TODO_PORT		// TODO
 
 // Hall sensor defines
-#define HALL_A_PIN	GPIO_PIN_1	// robo, based on Herleybob:defines.h A = U ?
-#define HALL_A_PORT	GPIOA				// robo, based on Herleybob:defines.h A =  U ?
-#define HALL_B_PIN	GPIO_PIN_2	// robo, based on Herleybob:defines.h B = V ?
-#define HALL_B_PORT	GPIOA				// robo, based on Herleybob:defines.h B = V ?
-#define HALL_C_PIN	GPIO_PIN_0		// robo, based on Herleybob:defines.h C = W ?
-#define HALL_C_PORT	GPIOA				// robo, based on Herleybob:defines.h C = W ?
+// mateuszfcg tested with PA1,PA2,PA0 
+#define HALL_A_PIN	GPIO_PIN_1
+#define HALL_A_PORT	GPIOA
+#define HALL_B_PIN	GPIO_PIN_2
+#define HALL_B_PORT	GPIOA
+#define HALL_C_PIN	GPIO_PIN_0
+#define HALL_C_PORT	GPIOA
 
 // Usart master slave defines
-#define USART_MASTERSLAVE USART1	// robo no second uart port yet.
+//#define USART_MASTERSLAVE USART1	// robo no second uart port yet.
 #ifdef USART_MASTERSLAVE
 	#define USART_MASTERSLAVE_TX_PIN	GPIO_PIN_6
 	#define USART_MASTERSLAVE_TX_PORT	GPIOB
 	#define USART_MASTERSLAVE_RX_PIN	GPIO_PIN_7
 	#define USART_MASTERSLAVE_RX_PORT	GPIOB
+#endif
+
+// Usart steer defines
+//#define USART_STEER_COM USART0					
+#ifdef USART_STEER_COM
+	#define USART_STEER_RCU RCU_USART0			
+	#define USART_STEER_AF	GPIO_AF_0				
+	#define USART_STEER_COM_TX_PIN	GPIO_PIN_11
+	#define USART_STEER_COM_TX_PORT	GPIOB
+	#define USART_STEER_COM_RX_PIN	GPIO_PIN_10
+	#define USART_STEER_COM_RX_PORT	GPIOB
 #endif
 
 // ADC defines
@@ -102,14 +113,6 @@
 #define BUTTON_PIN	GPIO_PIN_2			// robo, based on Herleybob:defines.h
 #define BUTTON_PORT	GPIOB						// robo, based on Herleybob:defines.h
 
-// Usart steer defines
-#define USART_STEER_COM USART0					
-#define USART_STEER_RCU RCU_USART0			
-#define USART_STEER_AF	GPIO_AF_0				
-#define USART_STEER_COM_TX_PIN	GPIO_PIN_11
-#define USART_STEER_COM_TX_PORT	GPIOB
-#define USART_STEER_COM_RX_PIN	GPIO_PIN_10
-#define USART_STEER_COM_RX_PORT	GPIOB
 
 #ifdef BUZZER
 	// Buzzer defines
