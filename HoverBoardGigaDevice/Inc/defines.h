@@ -15,11 +15,14 @@
 #ifdef LAYOUT_2_2
 	#include "defines_2-2.h"		// https://github.com/krisstakos/Hoverboard-Firmware-Hack-Gen2.1
 #endif
+#ifdef LAYOUT_2_3
+	#include "defines_2-3.h"		// https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/20
+#endif
 #ifdef LAYOUT_2_4
 	#include "defines_2-4.h"		// https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/3
 #endif
 #ifdef LAYOUT_2_7
-	#include "defines_2-7.h"		// https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/3
+	#include "defines_2-7.h"		// https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/16
 #endif
 
 #ifdef DEBUG_LED_PIN
