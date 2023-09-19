@@ -435,11 +435,6 @@
           <GroupName>Inc</GroupName>
           <Files>
             <File>
-              <FileName>defines.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Inc\defines.h</FilePath>
-            </File>
-            <File>
               <FileName>config.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\config.h</FilePath>
@@ -485,6 +480,11 @@
               <FilePath>.\Inc\led.h</FilePath>
             </File>
             <File>
+              <FileName>defines.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\defines.h</FilePath>
+            </File>
+            <File>
               <FileName>defines_2-0.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\defines_2-0.h</FilePath>
@@ -498,6 +498,11 @@
               <FileName>defines_2-2.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\defines_2-2.h</FilePath>
+            </File>
+            <File>
+              <FileName>defines_2-3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\defines_2-3.h</FilePath>
             </File>
             <File>
               <FileName>defines_2-4.h</FileName>
@@ -958,11 +963,6 @@
           <GroupName>Inc</GroupName>
           <Files>
             <File>
-              <FileName>defines.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Inc\defines.h</FilePath>
-            </File>
-            <File>
               <FileName>config.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\config.h</FilePath>
@@ -1008,6 +1008,11 @@
               <FilePath>.\Inc\led.h</FilePath>
             </File>
             <File>
+              <FileName>defines.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\defines.h</FilePath>
+            </File>
+            <File>
               <FileName>defines_2-0.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\defines_2-0.h</FilePath>
@@ -1021,6 +1026,11 @@
               <FileName>defines_2-2.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\defines_2-2.h</FilePath>
+            </File>
+            <File>
+              <FileName>defines_2-3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\defines_2-3.h</FilePath>
             </File>
             <File>
               <FileName>defines_2-4.h</FileName>
