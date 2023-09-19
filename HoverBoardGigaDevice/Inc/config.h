@@ -28,8 +28,14 @@
 #define USART_CRSF
 //#define USART_SERIAL
 
-//#define USART_STEER_COM_BAUD 19200
+#ifdef USART_CRSF
 #define USART_STEER_COM_BAUD 115200
+#endif
+
+#ifdef USART_SERIAL
+#define USART_STEER_COM_BAUD 19200
+#endif
+
 
 #ifdef MASTER
 	#define SPEED_COEFFICIENT   -1
