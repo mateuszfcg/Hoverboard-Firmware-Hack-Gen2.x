@@ -55,10 +55,18 @@
 - [details](Schematics_2.7/)
 - [issue](https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/16)
 
+
 #### todo: version/layout 2.8: = MM32SPIN05PFOP :-( 
 ![layout 2.8](https://raw.githubusercontent.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/main/Overview_2-8.jpg)
 - [details](Schematics_2.8/)
 - [issue](https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/22)
+
+
+#### todo: version/layout 2.9: = GD32F103C6T6
+![layout 2.9](https://raw.githubusercontent.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/main/Overview_2-9.jpg)
+- [details](Schematics_2.9/)
+- [issue](https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/23)
+
 
 ---
 
