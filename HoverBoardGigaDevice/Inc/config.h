@@ -16,6 +16,7 @@
 	#define LAYOUT_2_0	// https://github.com/flo199213/Hoverboard-Firmware-Hack-Gen2
 	//#define LAYOUT_2_1	// https://github.com/krisstakos/Hoverboard-Firmware-Hack-Gen2.1
 	//#define LAYOUT_2_2	// 2023/05/11 only MASTER and TEST_SPEED: motor is spinning but needs a push to startup :-/
+	//#define LAYOUT_2_3	// 2023/09/19 motor does not run stable (sound like skipping steps in a stepper motor but it is rotating). mosfets heating up :-(
 	//#define LAYOUT_2_4	// NOT READY !!! https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/3
 #endif
 
