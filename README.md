@@ -50,10 +50,15 @@
 - [issue](https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/12)
 
 
-#### todo: version/layout 2.7:
+#### todo: version/layout 2.7: = GD32E230C8T6 :-/
 ![layout 2.4](https://raw.githubusercontent.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/main/Overview_2-7.jpg)
 - [details](Schematics_2.7/)
 - [issue](https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/16)
+
+#### todo: version/layout 2.8: = MM32SPIN05PFOP :-( 
+![layout 2.8](https://raw.githubusercontent.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/main/Overview_2-8.jpg)
+- [details](Schematics_2.8/)
+- [issue](https://github.com/RoboDurden/Hoverboard-Firmware-Hack-Gen2.x/issues/22)
 
 ---
 
