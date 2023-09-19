@@ -72,32 +72,32 @@
 #define HALL_C_PORT	GPIOA
 
 // Usart master slave defines
-//#define USART_MASTERSLAVE USART1	// robo no second uart port yet.
+//#define USART_MASTERSLAVE USART1	// robo no second uart port for this board
 #ifdef USART_MASTERSLAVE
-	#define USART_MASTERSLAVE_TX_PIN	GPIO_PIN_6
-	#define USART_MASTERSLAVE_TX_PORT	GPIOB
-	#define USART_MASTERSLAVE_RX_PIN	GPIO_PIN_7
-	#define USART_MASTERSLAVE_RX_PORT	GPIOB
+	#define USART_MASTERSLAVE_TX_PIN	TODO_PIN
+	#define USART_MASTERSLAVE_TX_PORT	TODO_PORT
+	#define USART_MASTERSLAVE_RX_PIN	TODO_PIN
+	#define USART_MASTERSLAVE_RX_PORT	TODO_PORT
 #endif
 
 // Usart steer defines
-//#define USART_STEER_COM USART0					
+#define USART_STEER_COM USART0					
 #ifdef USART_STEER_COM
 	#define USART_STEER_RCU RCU_USART0			
 	#define USART_STEER_AF	GPIO_AF_0				
-	#define USART_STEER_COM_TX_PIN	GPIO_PIN_11
+	#define USART_STEER_COM_TX_PIN	GPIO_PIN_6
 	#define USART_STEER_COM_TX_PORT	GPIOB
-	#define USART_STEER_COM_RX_PIN	GPIO_PIN_10
+	#define USART_STEER_COM_RX_PIN	GPIO_PIN_7
 	#define USART_STEER_COM_RX_PORT	GPIOB
 #endif
 
 // ADC defines
-//#define VBATT_PIN	GPIO_PIN_0				// robo, no gpio_mode_set() inHerleybob:setup.c
-#define VBATT_PORT GPIOA							// robo, no gpio_mode_set() inHerleybob:setup.c
-#define VBATT_CHANNEL ADC_CHANNEL_17	// robo, based on Herleybob:setup.c: adc_regular_channel_config(2,ADC_CHANNEL_17,ADC_SAMPLETIME_13POINT5);
-//#define CURRENT_DC_PIN	GPIO_PIN_1	// robo, no gpio_mode_set() inHerleybob:setup.c
-#define CURRENT_DC_PORT GPIOA					// robo, no gpio_mode_set() inHerleybob:setup.c
-#define CURRENT_DC_CHANNEL ADC_CHANNEL_2	// robo, maybe adc_buf_t:adc is potentiometer input
+//#define VBATT_PIN	GPIO_PIN_0
+#define VBATT_PORT GPIOA			
+#define VBATT_CHANNEL ADC_CHANNEL_17
+//#define CURRENT_DC_PIN	GPIO_PIN_1	
+#define CURRENT_DC_PORT GPIOA
+#define CURRENT_DC_CHANNEL ADC_CHANNEL_2
 
 // Self hold defines
 // important pin keeps the mosfet open after the on/off button got pushed !
