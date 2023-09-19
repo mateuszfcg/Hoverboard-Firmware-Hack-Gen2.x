@@ -44,6 +44,7 @@ int32_t steer = 0; 												// global variable for steering. -1000 to 1000
 FlagStatus activateWeakening = RESET;			// global variable for weakening
 FlagStatus beepsBackwards = SET;  			// global variable for beeps backwards
 			
+extern uint8_t failsafe_status;
 			
 extern float batteryVoltage; 							// global variable for battery voltage
 extern float currentDC; 									// global variable for current dc
@@ -263,6 +264,7 @@ int main (void)
 	float expo = 0;
 	float steerAngle = 0;
 	float xScale = 0;
+	int16_t speedLimit = 1000;
 #endif
 
 	
@@ -338,15 +340,22 @@ int main (void)
 		
 	#ifdef MASTER
 		if ((steerCounter % 2) == 0)
-			SendSteerDevice();	// Request steering data
-		
+		#ifdef USART_CRSF
+			updateChannels();
+		speed = getChannel(1)-1024;
+		steer = getChannel(0)-1024;
+		speedLimit = getChannel(5);
+		#endif
+		#ifdef USART_SERIAL
+		SendSteerDevice();	// Request steering data
+		#endif
 		// Calculate expo rate for less steering with higher speeds
 		expo = MAP((float)ABS(speed), 0, 1000, 1, 0.5);
 		
 	  // Each speedvalue or steervalue between 50 and -50 means absolutely no pwm
 		// -> to get the device calm 'around zero speed'
-		scaledSpeed = speed < 50 && speed > -50 ? 0 : CLAMP(speed, -1000, 1000) * SPEED_COEFFICIENT;
-		scaledSteer = steer < 50 && steer > -50 ? 0 : CLAMP(steer, -1000, 1000) * STEER_COEFFICIENT * expo;
+		scaledSpeed = speed < 50 && speed > -50 ? 0 : CLAMP(speed, -speedLimit, speedLimit) * SPEED_COEFFICIENT;
+		scaledSteer = steer < 50 && steer > -50 ? 0 : CLAMP(steer, -speedLimit, speedLimit) * STEER_COEFFICIENT * expo;
 		
 		// Map to an angle of 180 degress to 0 degrees for array access (means angle -90 to 90 degrees)
 		steerAngle = MAP((float)scaledSteer, -1000, 1000, 180, 0);
@@ -371,6 +380,11 @@ int main (void)
 		
 		// Enable is depending on charger is connected or not
 		enable = chargeStateLowActive;
+		
+		// Enable is depending on arm switch
+		//#ifdef USART_CRSF
+		//enable &= (getChannel(4)-1024) > 0; //arm switch doesn't work
+		//#endif
 		//enable = SET;		// robo testing
 		
 		// Enable channel output
