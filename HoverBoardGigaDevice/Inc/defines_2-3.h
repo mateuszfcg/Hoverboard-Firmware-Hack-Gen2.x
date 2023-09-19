@@ -130,6 +130,15 @@
 	#define CHARGE_STATE_PORT GPIOF				// TODO
 #endif
 
+// photo diodes / light barriers on the backside
+
+#define PHOTO_L_PIN		GPIO_PIN_15
+#define PHOTO_L_PORT	GPIOC
+#define PHOTO_R_PIN		GPIO_PIN_14
+#define PHOTO_R_PORT	GPIOC
+
+
+
 // Debug pin defines - seems to be never used in code.
 #define DEBUG_PIN TODO_PIN	// TODO
 #define DEBUG_PORT TODO_PORT			// TODO`
