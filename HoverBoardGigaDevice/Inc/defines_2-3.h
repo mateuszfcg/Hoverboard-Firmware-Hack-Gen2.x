@@ -92,10 +92,10 @@
 #endif
 
 // ADC defines
-//#define VBATT_PIN	GPIO_PIN_0
+//#define VBATT_PIN	GPIO_PIN_0		// uncomment this line when you have verified the pin/port
 #define VBATT_PORT GPIOA			
 #define VBATT_CHANNEL ADC_CHANNEL_17
-//#define CURRENT_DC_PIN	GPIO_PIN_1	
+//#define CURRENT_DC_PIN	GPIO_PIN_1	// uncomment this line when you have verified the pin/port
 #define CURRENT_DC_PORT GPIOA
 #define CURRENT_DC_CHANNEL ADC_CHANNEL_2
 
