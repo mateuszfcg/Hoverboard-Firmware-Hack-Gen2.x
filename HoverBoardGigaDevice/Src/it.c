@@ -35,7 +35,10 @@
 #include "../Inc/bldc.h"
 #include "../Inc/led.h"
 #include "../Inc/commsMasterSlave.h"
-#include "../Inc/commsSteering.h"
+
+//#include "../Inc/commsSteering.h"
+#include "../Inc/remote.h"
+
 #include "../Inc/commsBluetooth.h"
 
 uint32_t msTicks;
@@ -163,13 +166,7 @@ void DMA_Channel0_IRQHandler(void)
 		if (dma_interrupt_flag_get(DMA_CH2, DMA_INT_FLAG_FTF))
 		{
 	#ifdef MASTER
-			#ifdef USART_CRSF
-				GetCrsfPacket();
-			#endif
-			#ifdef USART_SERIAL
-				// Update USART steer input mechanism
-				UpdateUSARTSteerInput();
-			#endif
+			RemoteCallback();
 	#endif
 	#ifdef SLAVE
 			// Update USART bluetooth input mechanism

@@ -27,54 +27,13 @@
 * You should have received a copy of the GNU General Public License
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
+/*
 #ifndef COMMSSTEERING_H
 #define COMMSSTEERING_H
 
 //#include "gd32f1x0.h"
 #include "../Inc/config.h"
 
-// Only master communicates with steering device
-#ifdef MASTER
-
-#ifdef USART_CRSF
-
-//----------------------------------------------------------------------------
-// CRSF Initialization
-//----------------------------------------------------------------------------
-void crsfInit(void);
-
-//----------------------------------------------------------------------------
-// Return Value of Channel ch
-//----------------------------------------------------------------------------
-int16_t getChannel(uint8_t ch);
-
-//----------------------------------------------------------------------------
-// Update Channel values form crsfData
-//----------------------------------------------------------------------------
-void updateChannels(void);
-
-//----------------------------------------------------------------------------
-// Update Channel values form crsfData
-//----------------------------------------------------------------------------
-uint8_t crsf_crc8(const uint8_t *ptr, uint8_t len);
-	
-//----------------------------------------------------------------------------
-// Get Crsf Packet
-//----------------------------------------------------------------------------
-void GetCrsfPacket(void);
 
 #endif
-
-//----------------------------------------------------------------------------
-// Update USART steer input
-//----------------------------------------------------------------------------
-void UpdateUSARTSteerInput(void);
-
-//----------------------------------------------------------------------------
-// Send frame to steer device
-//----------------------------------------------------------------------------
-void SendSteerDevice(void);
-#endif
-
-#endif
+*/

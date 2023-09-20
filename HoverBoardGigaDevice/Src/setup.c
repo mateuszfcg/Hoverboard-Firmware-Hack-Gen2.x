@@ -34,6 +34,7 @@
 #include "../Inc/config.h"
 #include "../Inc/defines.h"
 #include "../Inc/it.h"
+#include "../Inc/remote.h"
 
 #define TIMEOUT_FREQ  1000
 
@@ -478,7 +479,7 @@ void USART_MasterSlave_init(void)
 //----------------------------------------------------------------------------
 void USART_Steer_COM_init(void)
 {
-#ifdef USART_STEER_COM
+#ifdef USART_STEER_COM_BAUD
 	
 		// Enable ADC and DMA clock
 	rcu_periph_clock_enable(USART_STEER_RCU);

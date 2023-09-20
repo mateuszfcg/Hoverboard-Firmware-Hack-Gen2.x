@@ -131,7 +131,6 @@
 #endif
 
 // photo diodes / light barriers on the backside
-
 #define PHOTO_L_PIN		GPIO_PIN_15
 #define PHOTO_L_PORT	GPIOC
 #define PHOTO_R_PIN		GPIO_PIN_14

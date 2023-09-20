@@ -9,7 +9,10 @@
 #include "../Inc/it.h"
 #include "../Inc/bldc.h"
 #include "../Inc/commsMasterSlave.h"
-#include "../Inc/commsSteering.h"
+
+//#include "../Inc/commsSteering.h"
+#include "../Inc/remote.h"
+
 #include "../Inc/commsBluetooth.h"
 #include "stdio.h"
 #include "stdlib.h"
@@ -33,6 +36,7 @@
 
 uint32_t steerCounter = 0;								// Steer counter for setting update rate
 int32_t speed = 0; 												// global variable for speed.    -1000 to 1000
+int16_t speedLimit = 1000;
     
 
 #ifdef MASTER
@@ -264,7 +268,6 @@ int main (void)
 	float expo = 0;
 	float steerAngle = 0;
 	float xScale = 0;
-	int16_t speedLimit = 1000;
 #endif
 
 	
@@ -312,7 +315,7 @@ int main (void)
 #ifdef CHECK_BUTTON
 	// Wait until button is released
 	while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN)){fwdgt_counter_reload();} // Reload watchdog while button is pressed
-	Delay(10); //debounce to prevent immediate ShutOff (100 is to much with a switch instead of a push button)
+	//Delay(10); //debounce to prevent immediate ShutOff (100 is to much with a switch instead of a push button)
 #endif
 
 	//DEBUG_LedSet(RESET)
@@ -321,34 +324,11 @@ int main (void)
 		steerCounter++;		// something like DELAY_IN_MAIN_LOOP = 5 ms
 		//DEBUG_LedSet((steerCounter%20) < 10)		
 
-		#ifdef TEST_SPEED
-			speed = 20 * (ABS((	((int32_t)steerCounter+100) % 400) - 200) - 100);
-			//speed = 15 * (ABS((	((int32_t)steerCounter+100) % 400) - 200) - 100);
-		  //#define SPEED 390  //760  //390
-			speed = CLAMP(speed , -1000, 1000);
-		
-			//speed = 300;
-			//speed = 0;
-
-			#ifdef SLAVE
-				SetEnable(SET);
-				SetPWM(-speed);
-				ResetTimeout();
-			#endif
-		#endif
-
 		
 	#ifdef MASTER
 		if ((steerCounter % 2) == 0)
-		#ifdef USART_CRSF
-			updateChannels();
-		speed = getChannel(1)-1024;
-		steer = getChannel(0)-1024;
-		speedLimit = getChannel(5);
-		#endif
-		#ifdef USART_SERIAL
-		SendSteerDevice();	// Request steering data
-		#endif
+			RemoteUpdate();
+
 		// Calculate expo rate for less steering with higher speeds
 		expo = MAP((float)ABS(speed), 0, 1000, 1, 0.5);
 		

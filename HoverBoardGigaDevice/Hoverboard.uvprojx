@@ -415,11 +415,6 @@
               <FilePath>.\Src\commsBluetooth.c</FilePath>
             </File>
             <File>
-              <FileName>commsSteering.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Src\commsSteering.c</FilePath>
-            </File>
-            <File>
               <FileName>commsMasterSlave.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\commsMasterSlave.c</FilePath>
@@ -428,6 +423,21 @@
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>remoteUart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\remoteUart.c</FilePath>
+            </File>
+            <File>
+              <FileName>remoteCrsf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\remoteCrsf.c</FilePath>
+            </File>
+            <File>
+              <FileName>remoteDummy.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\remoteDummy.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -463,11 +473,6 @@
               <FileName>commsBluetooth.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\commsBluetooth.h</FilePath>
-            </File>
-            <File>
-              <FileName>commsSteering.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Inc\commsSteering.h</FilePath>
             </File>
             <File>
               <FileName>commsMasterSlave.h</FileName>
@@ -523,6 +528,26 @@
               <FileName>target.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\target.h</FilePath>
+            </File>
+            <File>
+              <FileName>remote.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\remote.h</FilePath>
+            </File>
+            <File>
+              <FileName>remoteUart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\remoteUart.h</FilePath>
+            </File>
+            <File>
+              <FileName>remoteCrsf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\remoteCrsf.h</FilePath>
+            </File>
+            <File>
+              <FileName>remoteDummy.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\remoteDummy.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -943,11 +968,6 @@
               <FilePath>.\Src\commsBluetooth.c</FilePath>
             </File>
             <File>
-              <FileName>commsSteering.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Src\commsSteering.c</FilePath>
-            </File>
-            <File>
               <FileName>commsMasterSlave.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\commsMasterSlave.c</FilePath>
@@ -956,6 +976,21 @@
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>remoteUart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\remoteUart.c</FilePath>
+            </File>
+            <File>
+              <FileName>remoteCrsf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\remoteCrsf.c</FilePath>
+            </File>
+            <File>
+              <FileName>remoteDummy.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\remoteDummy.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -991,11 +1026,6 @@
               <FileName>commsBluetooth.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\commsBluetooth.h</FilePath>
-            </File>
-            <File>
-              <FileName>commsSteering.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Inc\commsSteering.h</FilePath>
             </File>
             <File>
               <FileName>commsMasterSlave.h</FileName>
@@ -1051,6 +1081,26 @@
               <FileName>target.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Inc\target.h</FilePath>
+            </File>
+            <File>
+              <FileName>remote.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\remote.h</FilePath>
+            </File>
+            <File>
+              <FileName>remoteUart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\remoteUart.h</FilePath>
+            </File>
+            <File>
+              <FileName>remoteCrsf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\remoteCrsf.h</FilePath>
+            </File>
+            <File>
+              <FileName>remoteDummy.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\remoteDummy.h</FilePath>
             </File>
           </Files>
         </Group>

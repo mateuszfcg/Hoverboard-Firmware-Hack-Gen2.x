@@ -179,12 +179,7 @@ void ProessReceived(SerialReceive* pData)
 
 #else
 
-	// Calculate result pwm value -1000 to 1000
-	#ifdef TEST_SPEED
-		pwmSlave = CLAMP(pData->iPwmSlave,-300,300);
-	#else
-		pwmSlave = CLAMP(pData->iPwmSlave,-1000,1000);
-	#endif
+	pwmSlave = CLAMP(pData->iPwmSlave,-1000,1000);
 	
 	// Get identifier
 	identifier = pData->iIdentifier;
