@@ -23,7 +23,19 @@
 
 #define MASTER		// uncomment if firmware is for slave board
 
-#define TEST_SPEED	// will discard uart input and repeat speed from -300 to 300 instead
+//#define TEST_SPEED	// will discard uart input and repeat speed from -300 to 300 instead
+
+#define USART_CRSF
+//#define USART_SERIAL
+
+#ifdef USART_CRSF
+#define USART_STEER_COM_BAUD 115200
+#endif
+
+#ifdef USART_SERIAL
+#define USART_STEER_COM_BAUD 19200
+#endif
+
 
 #ifdef MASTER
 	#define SPEED_COEFFICIENT   -1

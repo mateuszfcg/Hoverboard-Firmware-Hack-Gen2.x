@@ -163,8 +163,13 @@ void DMA_Channel0_IRQHandler(void)
 		if (dma_interrupt_flag_get(DMA_CH2, DMA_INT_FLAG_FTF))
 		{
 	#ifdef MASTER
-			// Update USART steer input mechanism
-			UpdateUSARTSteerInput();
+			#ifdef USART_CRSF
+				GetCrsfPacket();
+			#endif
+			#ifdef USART_SERIAL
+				// Update USART steer input mechanism
+				UpdateUSARTSteerInput();
+			#endif
 	#endif
 	#ifdef SLAVE
 			// Update USART bluetooth input mechanism

@@ -485,7 +485,7 @@ void USART_Steer_COM_init(void)
 	rcu_periph_clock_enable(RCU_DMA);
 	
 	// Init USART for 19200 baud, 8N1
-	usart_baudrate_set(USART_STEER_COM, 19200);
+	usart_baudrate_set(USART_STEER_COM, USART_STEER_COM_BAUD);
 	usart_parity_config(USART_STEER_COM, USART_PM_NONE);
 	usart_word_length_set(USART_STEER_COM, USART_WL_8BIT);
 	usart_stop_bit_set(USART_STEER_COM, USART_STB_1BIT);
