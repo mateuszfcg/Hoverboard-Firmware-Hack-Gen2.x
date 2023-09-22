@@ -315,7 +315,7 @@ int main (void)
 #ifdef CHECK_BUTTON
 	// Wait until button is released
 	while (gpio_input_bit_get(BUTTON_PORT, BUTTON_PIN)){fwdgt_counter_reload();} // Reload watchdog while button is pressed
-	//Delay(10); //debounce to prevent immediate ShutOff (100 is to much with a switch instead of a push button)
+	Delay(10); //debounce to prevent immediate ShutOff (100 is to much with a switch instead of a push button)
 #endif
 
 	//DEBUG_LedSet(RESET)
