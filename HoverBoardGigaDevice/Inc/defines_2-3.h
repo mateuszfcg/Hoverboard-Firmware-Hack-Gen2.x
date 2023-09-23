@@ -8,8 +8,8 @@
 //#define TODO_PIN	GPIO_PIN_15	// B15 is not accessibla on the smaller QFN32 32 pin MCU version
 #define TODO_PORT 	GPIOF		// this should be a pin that does no harm if input or output
 #define TODO_PIN	GPIO_PIN_4	// PF4 is only accessible on the largest GD32F130Rx LQFP64 pinouts mcu
-
-
+//////////////////////////oryginal z github
+/*
 // LED defines, colors probably mismatch !
 #define LED_GREEN 			GPIO_PIN_15
 #define LED_GREEN_PORT 	GPIOA
@@ -25,7 +25,24 @@
 
 #define DEBUG_LED_PIN 	LED_RED
 #define DEBUG_LED_PORT 	LED_RED_PORT
+*/
 
+///////moj config
+
+#define LED_GREEN 			GPIO_PIN_3		
+#define LED_GREEN_PORT 	GPIOB
+#define LED_ORANGE 			GPIO_PIN_4   
+#define LED_ORANGE_PORT	GPIOB
+#define LED_RED 				GPIO_PIN_15 
+#define LED_RED_PORT 		GPIOA
+
+#define UPPER_LED_PIN 	GPIO_PIN_13
+#define UPPER_LED_PORT 	GPIOC
+#define LOWER_LED_PIN 	GPIO_PIN_5
+#define LOWER_LED_PORT 	GPIOB
+
+//#define DEBUG_LED_PIN 	LED_RED
+//#define DEBUG_LED_PORT 	LED_RED_PORT
 
 // Mosfet output
 // seems to be an ordinary LED output ?
