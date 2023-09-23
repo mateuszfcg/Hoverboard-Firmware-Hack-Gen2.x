@@ -194,16 +194,16 @@ void CalculateBLDC(void)
 
 	//if (timedOut == SET)	DEBUG_LedSet((steerCounter%2) < 1)		
 	
-  // Read hall sensors
+	// Read hall sensors
 	hall_a = gpio_input_bit_get(HALL_A_PORT, HALL_A_PIN);
-  hall_b = gpio_input_bit_get(HALL_B_PORT, HALL_B_PIN);
+	hall_b = gpio_input_bit_get(HALL_B_PORT, HALL_B_PIN);
 	hall_c = gpio_input_bit_get(HALL_C_PORT, HALL_C_PIN);
-  
-	/*
-	gpio_bit_write(DEBUG_LED_PORT, LED_GREEN, hall_a);
-	gpio_bit_write(DEBUG_LED_PORT, LED_ORANGE, hall_a);
-	gpio_bit_write(DEBUG_LED_PORT, LED_RED, hall_a);
-	*/
+
+	#ifdef TEST_HALL2LED
+		gpio_bit_write(LED_GREEN_PORT, LED_GREEN, hall_a);
+		gpio_bit_write(LED_ORANGE_PORT, LED_ORANGE, hall_b);
+		gpio_bit_write(LED_RED_PORT, LED_RED, hall_c);
+	#endif
 	
 	// Determine current position based on hall sensors
   hall = hall_a * 1 + hall_b * 2 + hall_c * 4;

@@ -15,6 +15,7 @@ void RemoteUpdate(void)
 	#ifdef MASTER
 		speed = 3 * (ABS((	((int32_t)msTicks/3+100) % 400) - 200) - 100);
 		speed = CLAMP(speed , -1000, 1000);
+		//speed = 100;
 	#else
 		SetEnable(SET);
 		SetPWM(-speed);

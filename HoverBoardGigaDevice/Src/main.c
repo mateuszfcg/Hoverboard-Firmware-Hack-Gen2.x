@@ -504,6 +504,10 @@ void ShutOff(void)
 //----------------------------------------------------------------------------
 void ShowBatteryState(uint32_t pin)
 {
+	#ifdef TEST_HALL2LED	
+		return;
+	#endif
+	
 	if(pin == LED_ORANGE){
 		#ifdef THIRD_LED
 		//gpio_bit_write(LED_ORANGE_PORT, LED_ORANGE, SET);
